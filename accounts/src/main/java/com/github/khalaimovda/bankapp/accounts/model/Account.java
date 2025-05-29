@@ -1,3 +1,5 @@
 package com.github.khalaimovda.bankapp.accounts.model;
 
-public record Account (int id, int userId, int amount) {}
+import java.math.BigDecimal;
+
+public record Account (int id, int userId, BigDecimal amount) {}
