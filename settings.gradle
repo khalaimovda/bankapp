@@ -1,7 +1,10 @@
 rootProject.name = 'bankapp'
+include 'contracts'
+
 include 'accounts'
 include 'cash'
 include 'blocker'
 include 'transfer'
 include 'exchange'
 include 'exchange-generator'
+include 'notifications'

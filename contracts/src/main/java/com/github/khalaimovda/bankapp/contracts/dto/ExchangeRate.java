@@ -1,5 +1,6 @@
-package com.github.khalaimovda.bankapp.exchange.dto;
+package com.github.khalaimovda.bankapp.contracts.dto;
 
+import com.github.khalaimovda.bankapp.contracts.enums.Currency;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;
 

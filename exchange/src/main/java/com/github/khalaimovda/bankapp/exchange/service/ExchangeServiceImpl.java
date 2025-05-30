@@ -1,7 +1,7 @@
 package com.github.khalaimovda.bankapp.exchange.service;
 
-import com.github.khalaimovda.bankapp.exchange.dto.Currency;
-import com.github.khalaimovda.bankapp.exchange.dto.ExchangeRate;
+import com.github.khalaimovda.bankapp.contracts.dto.ExchangeRate;
+import com.github.khalaimovda.bankapp.contracts.enums.Currency;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

@@ -1,6 +1,6 @@
 package com.github.khalaimovda.bankapp.exchange.service;
 
-import com.github.khalaimovda.bankapp.exchange.dto.ExchangeRate;
+import com.github.khalaimovda.bankapp.contracts.dto.ExchangeRate;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

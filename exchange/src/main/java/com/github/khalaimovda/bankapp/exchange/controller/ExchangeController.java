@@ -1,6 +1,6 @@
 package com.github.khalaimovda.bankapp.exchange.controller;
 
-import com.github.khalaimovda.bankapp.exchange.dto.ExchangeRate;
+import com.github.khalaimovda.bankapp.contracts.dto.ExchangeRate;
 import com.github.khalaimovda.bankapp.exchange.service.ExchangeService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

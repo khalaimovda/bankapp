@@ -1,4 +1,4 @@
-package com.github.khalaimovda.bankapp.blocker.dto;
+package com.github.khalaimovda.bankapp.contracts.dto;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
@@ -10,17 +10,12 @@ import java.math.BigDecimal;
 
 @Getter
 @Setter
-public class TransferOperationCheckRequest extends SuspicionCheckRequest {
+public final class WithdrawalOperation extends FinancialOperation {
     @NotNull
     @Min(1)
-    private Integer fromAccountId;
-
-    @NotNull
-    @Min(1)
-    private Integer toAccountId;
+    private Integer accountId;
 
     @NotNull
     @DecimalMin(value = "0.01")
     private BigDecimal amount;
 }
-

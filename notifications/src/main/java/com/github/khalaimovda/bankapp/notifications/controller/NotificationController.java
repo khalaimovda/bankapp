@@ -1,11 +1,10 @@
-package com.github.khalaimovda.bankapp.blocker.conrtoller;
+package com.github.khalaimovda.bankapp.notifications.controller;
 
-import com.github.khalaimovda.bankapp.blocker.dto.CheckResult;
-import com.github.khalaimovda.bankapp.blocker.service.SuspicionCheckService;
 import com.github.khalaimovda.bankapp.contracts.dto.DepositOperation;
 import com.github.khalaimovda.bankapp.contracts.dto.FinancialOperation;
 import com.github.khalaimovda.bankapp.contracts.dto.TransferOperation;
 import com.github.khalaimovda.bankapp.contracts.dto.WithdrawalOperation;
+import com.github.khalaimovda.bankapp.notifications.service.NotificationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,18 +16,18 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequiredArgsConstructor
-public class BlockerController {
+public class NotificationController {
 
-    private final SuspicionCheckService suspicionCheckService;
+    private final NotificationService notificationService;
 
-    @PostMapping("/suspicion-checks")
+    @PostMapping("")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<CheckResult> suspicionChecks(@Valid @RequestBody FinancialOperation operation) {
+    public Mono<Void> notify(@Valid @RequestBody FinancialOperation operation) {
         // todo: Refactoring
         return switch (operation) {
-            case TransferOperation transfer -> suspicionCheckService.check(transfer);
-            case DepositOperation deposit -> suspicionCheckService.check(deposit);
-            case WithdrawalOperation withdrawal -> suspicionCheckService.check(withdrawal);
+            case TransferOperation transfer -> notificationService.notify(transfer);
+            case DepositOperation deposit -> notificationService.notify(deposit);
+            case WithdrawalOperation withdrawal -> notificationService.notify(withdrawal);
         };
     }
 }
