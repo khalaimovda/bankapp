@@ -1,3 +1,4 @@
 rootProject.name = 'bankapp'
 include 'accounts'
 include 'cash'
+include 'blocker'
